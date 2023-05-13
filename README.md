@@ -17,11 +17,11 @@
 
 ### Фаза 1 (Powers of Tau)
 
-1. A coordinator generates an accumulator
-1. Participant downloads the latest accumulator
-1. Participant contributes their randomness to the accumulator (randomness is permantently deleted after this step)
-1. Participant uploads the accumulator back to the coordinator
-1. Coordinator verifies the accumulator was transformed correctly and produces a new challenge
+1. Координатор генерує накопичувач
+1. Учасник завантажує останній накопичувач
+1. Учасник вносить свою випадковість до накопичувача (випадковість знищується після цього кроку)
+1. Учасник завантажує накопичувач назад до координатора
+1. Координатор перевіряє, чи був накопичувач перетворений правильно та генерує нове викликання.
 
 Важливим аспектом цієї процедури є те, що вона може ніколи не закінчуватися.
 Це дозволяє SNARKs, які використовують KZG10, мати "неперервне" налаштування. 
@@ -31,12 +31,12 @@
 
 ### Фаза 2 (Параметризація до Groth16)
 
-1. Coordinator "prepares" the parameters from Phase 1 and converts them to Lagrange Coefficients
-1. Participant downloads the latest state of the parameters
-1. Participant contributes their randomness to the parameters (randomness is permantently deleted after this step)
-1. Participant uploads the parameters back to the coordinator
-1. Coordinator verifies the accumulator was transformed correctly
-1. Loop from 2 for all participants
+1. Координатор "підготовлює" параметри з Фази 1 та перетворює їх на коефіцієнти Лагранжа.
+1. Учасник завантажує останній стан параметрів.
+1. Учасник вносить свій випадковий внесок до параметрів (випадковість назавжди видаляється після цього кроку).
+1. Учасник завантажує параметри назад до координатора.
+1. Координатор перевіряє, чи було правильно перетворено аккумулятор.
+1. Повторює крок 2 для всіх учасників.
 
 Це дає параметри, які можна використовувати для побудови SNARKs Groth16 для даної схеми.
 Установка є коректною, якщо принаймні 1 учасник був чесним і знищив свій "токсичний залишок" на кроці 3.
